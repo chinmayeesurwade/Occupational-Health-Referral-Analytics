@@ -1,0 +1,12 @@
+Test,Requirement,Action,Expected,Status,Actual,Evidence
+U01,REQ01,Call without/wrong token,HTTP 401,Automated passed,,
+U02,REQ01,Fetch all pages,"1203 source, no missing pages",Automated passed,,
+U03,REQ02,Run seeded bad records,3 rejects with reason; 1200 accepted,Automated passed,,
+U04,REQ03,Run pipeline twice,"1200 stored, no duplicates",Automated passed,,
+U05,REQ03,Force HTTP 503,3 retries then fail; stored data unchanged,Automated passed,,
+U06,REQ04,Run PostgreSQL ETL and validation SQL,1200 unique IDs; 0 invalid date sequences,Not run,,
+U07,REQ05,Reset filters in both tools,Match evidence/reconciliation.json all totals,Not run,,
+U08,REQ05,Filter C01 in both tools,"300 referrals, 116 backlog, 24 overdue",Not run,,
+U09,REQ06,Open Superset charts and filters,Cards/trend/bar refresh and filters agree,Not run,,
+U10,REQ07,"Refresh Power BI, test slicers",Same SQL cohort and measures,Not run,,
+U11,REQ08,Peer plays operations owner,Explain missing report vs pending appointment; capture feedback,Not run,,

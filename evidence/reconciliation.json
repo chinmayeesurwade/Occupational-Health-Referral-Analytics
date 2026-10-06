@@ -1,0 +1,20 @@
+{
+  "as_of": "2026-10-06",
+  "all": {
+    "referrals": 1200,
+    "backlog": 486,
+    "overdue": 90,
+    "no_show_rate": 0.14545454545454545,
+    "mean_wait": 10.811170212765957,
+    "mean_report_turnaround": 5.920489296636085
+  },
+  "C01": {
+    "referrals": 300,
+    "backlog": 116,
+    "overdue": 24,
+    "no_show_rate": 0.14468085106382977,
+    "mean_wait": 11.492537313432836,
+    "mean_report_turnaround": 5.913793103448276
+  },
+  "note": "SQLite/Python control totals executed; compare native PostgreSQL and BI outputs after local setup."
+}

@@ -1,0 +1,10 @@
+Skill,Evidence,Status
+SQL/PostgreSQL,"sql/schema.sql, views.sql, validation.sql",PostgreSQL execution pending
+REST APIs/JSON,"src/api.py, src/ingest.py",Executed locally
+Python,"validation, upserts, retries, reconciliation",Executed SQLite route
+Apache Superset,"bi/create_superset_dashboard.py, docs/BI_Setup.md",Native setup/rendering pending
+Power BI,"Power_Query.m, Measures.dax, BI_Setup.md",Desktop authoring/refresh pending
+DBeaver,BI_Setup.md connection and validation walkthrough,Local connection pending
+Jira/Agile,Jira_Import.csv; two-sprint plan,Import and ceremonies not performed
+Client/SPOC,Word requirements/workshop/change scenarios,Simulation; no real client meeting
+Healthcare,"Referral, appointment and report workflow",Synthetic occupational health context

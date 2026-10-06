@@ -1,0 +1,9 @@
+Issue Type,Summary,Description,Priority,Labels
+Story,Fetch all API pages with bearer authentication,REQ01: All 1203 source rows are accounted for; unauthorised requests fail,High,occupational-health
+Story,Validate nested JSON and chronology,REQ02: Three seeded errors quarantined with reason; only 1200 accepted,High,occupational-health
+Story,Prevent duplicate loads and partial failures,REQ03: Second run remains 1200; outage commits no partial data,High,occupational-health
+Story,PostgreSQL reporting model,"REQ04: Date types, primary key, index and reporting views exist",High,occupational-health
+Story,Consistent reporting definitions,REQ05: Both tools match SQL using same snapshot and cohort filters,High,occupational-health
+Story,Superset dashboard,"REQ06: Cards, monthly trend, service comparison and filters work",Medium,occupational-health
+Story,Power BI report,"REQ07: M import, DAX measures, two report pages and slicers work",Medium,occupational-health
+Story,Client delivery and SPOC,"REQ08: Document questions, prioritisation, decisions, risks and sign-off",Medium,occupational-health

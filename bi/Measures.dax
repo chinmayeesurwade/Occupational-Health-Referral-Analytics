@@ -1,0 +1,7 @@
+// Create EACH measure separately on the table named Referrals.
+Referral Count = COUNTROWS(Referrals)
+Open Backlog = SUM(Referrals[backlog_flag])
+Overdue Reports = SUM(Referrals[overdue_report_flag])
+No Show Rate = DIVIDE(SUM(Referrals[no_show_flag]), SUM(Referrals[attended_or_missed_flag]))
+Average Wait Days = AVERAGE(Referrals[appointment_wait_days])
+Average Report Days = AVERAGE(Referrals[report_turnaround_days])

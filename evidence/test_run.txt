@@ -1,0 +1,13 @@
+test_auth_and_pagination (test_pipeline.PipelineTests.test_auth_and_pagination) ... ok
+test_idempotency_rejections_failure_atomicity (test_pipeline.PipelineTests.test_idempotency_rejections_failure_atomicity) ... INFO Accepted 1200; rejected 3; stored 1200
+INFO Accepted 1200; rejected 3; stored 1200
+WARNING HTTP 503 attempt 1
+WARNING HTTP 503 attempt 2
+WARNING HTTP 503 attempt 3
+ok
+test_threshold_and_denominator (test_pipeline.PipelineTests.test_threshold_and_denominator) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.929s
+
+OK

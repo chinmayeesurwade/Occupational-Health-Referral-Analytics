@@ -1,0 +1,22 @@
+{
+  "as_of": "2026-10-06",
+  "source_records": 1203,
+  "accepted": 1200,
+  "rejected": 3,
+  "stored": 1200,
+  "backend": "sqlite",
+  "rejects": [
+    {
+      "referral_id": "BAD01",
+      "reason": "month must be in 1..12"
+    },
+    {
+      "referral_id": "BAD02",
+      "reason": "missing employer_id"
+    },
+    {
+      "referral_id": "BAD03",
+      "reason": "invalid completion sequence"
+    }
+  ]
+}

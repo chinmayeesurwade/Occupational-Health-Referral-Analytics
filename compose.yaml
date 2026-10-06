@@ -1,0 +1,47 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: occupational_health
+      POSTGRES_USER: portfolio
+      POSTGRES_PASSWORD: portfolio-local-only
+    ports: ["127.0.0.1:5432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U portfolio -d occupational_health"]
+      interval: 5s
+      timeout: 5s
+      retries: 15
+  api:
+    build: .
+    environment:
+      API_TOKEN: portfolio-local-token
+    ports: ["127.0.0.1:8000:8000"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 5s
+      retries: 15
+  etl:
+    build: .
+    environment:
+      API_URL: http://api:8000
+      API_TOKEN: portfolio-local-token
+      DATABASE_URL: postgresql://portfolio:portfolio-local-only@postgres:5432/occupational_health
+    command: ["python", "src/ingest.py"]
+    depends_on:
+      postgres: {condition: service_healthy}
+      api: {condition: service_healthy}
+    volumes: ["./evidence:/project/evidence"]
+  superset:
+    image: apache/superset:5.0.0-dev
+    profiles: ["bi"]
+    environment:
+      SUPERSET_CONFIG_PATH: /app/config/superset_config.py
+    ports: ["127.0.0.1:8088:8088"]
+    volumes: ["./bi/superset_config.py:/app/config/superset_config.py", "supersetdata:/app/superset_home"]
+    command: ["/bin/sh", "-c", "superset db upgrade && (superset fab create-admin --username admin --firstname Portfolio --lastname Analyst --email demo@example.invalid --password portfolio-local-only || true) && superset init && superset run -h 0.0.0.0 -p 8088"]
+    depends_on:
+      postgres: {condition: service_healthy}
+volumes:
+  pgdata:
+  supersetdata:

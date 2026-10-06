@@ -1,0 +1,11 @@
+JSON path,SQL column,Type,Rule
+referral_id,referral_id,text,unique key
+employee.id,employee_id,text,required; excluded from reporting view
+employer.id,employer_id,text,required
+employer.name,employer_name,text,required
+service,service,text,required
+received_date,received_date,date,not after snapshot
+appointment.status,appointment_status,text,allowed status
+appointment.completed_date,completed_date,date/null,must match completed status and follow received date
+report.issued_date,issued_date,date/null,requires completion; not before completion
+updated_at,updated_at,timestamptz,ISO timestamp; newer rows replace older

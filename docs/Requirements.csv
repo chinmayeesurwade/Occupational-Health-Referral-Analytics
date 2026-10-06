@@ -1,0 +1,9 @@
+ID,Requirement,Acceptance
+REQ01,Fetch all API pages with bearer authentication,All 1203 source rows are accounted for; unauthorised requests fail
+REQ02,Validate nested JSON and chronology,Three seeded errors quarantined with reason; only 1200 accepted
+REQ03,Prevent duplicate loads and partial failures,Second run remains 1200; outage commits no partial data
+REQ04,PostgreSQL reporting model,"Date types, primary key, index and reporting views exist"
+REQ05,Consistent reporting definitions,Both tools match SQL using same snapshot and cohort filters
+REQ06,Superset dashboard,"Cards, monthly trend, service comparison and filters work"
+REQ07,Power BI report,"M import, DAX measures, two report pages and slicers work"
+REQ08,Client delivery and SPOC,"Document questions, prioritisation, decisions, risks and sign-off"

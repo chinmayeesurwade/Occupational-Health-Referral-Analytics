@@ -1,5 +1,5 @@
 # Occupational Health Referral Analytics
-Prepared for Chinmayee Surwade 
+Prepared by Chinmayee Surwade 
 ## Start here
 This project demonstrates SQL, Python, REST APIs, nested JSON, reporting requirements, data-quality handling and BI delivery. PostgreSQL/DBeaver and Superset setup are provided; Power BI M/DAX and a native authoring guide are included. It is not professional healthcare employment or a production system.
 
